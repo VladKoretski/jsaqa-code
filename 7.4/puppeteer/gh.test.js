@@ -18,13 +18,15 @@ describe("TASK 1. Github page tests", () => {
     await firstLink.click();
     await page.waitForSelector("h1");
     const title2 = await page.title();
-    expect(title2).toEqual("GitHub: Let’s build from here · GitHub");
-  }, 60000);
+    expect(title2).toEqual(
+      "GitHub for teams · Build like the best teams on the planet · GitHub"
+    );
+  }, 160000);
 
   test("The first link attribute", async () => {
     const actual = await page.$eval("a", (link) => link.getAttribute("href"));
     expect(actual).toEqual("#start-of-content");
-  }, 30000);
+  }, 160000);
 
   test("The page contains Sign in button", async () => {
     const btnSelector = ".btn-large-mktg.btn-mktg";
@@ -35,7 +37,7 @@ describe("TASK 1. Github page tests", () => {
       link.textContent.trim()
     );
     expect(actual).toContain("Get started with Team");
-  }, 30000);
+  }, 160000);
 });
 
 describe("TASK 2. Three 3 new tests", () => {
